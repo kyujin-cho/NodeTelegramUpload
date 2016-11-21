@@ -12,10 +12,11 @@ This project is integrated with Telegram bot built for Node.js framework.
 
 ## How-To
 1. Clone Repository
-2. Run `npm init && npm install`
+2. Run `npm install`
 3. Start mongod with path option (`--dbpath=/your/repository/location/DB`)
 4. Open app.js and 
 	1. replace `db_name` variable with your db name
+5. Open routes/file.js and
 	2. replace `folder_location` variable with your upload folder's location
 5. Open telebot.js and 
 	1. Replace `chatIds` variable(add chat ids you want to send message)

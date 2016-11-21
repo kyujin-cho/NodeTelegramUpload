@@ -6,7 +6,11 @@ var bot = new TelegramBot(token, {polling: true})
 
 var chatIds = []
 bot.onText(/\/upload/, function(msg, match) {
-	bot.sendMessage(msg.chatId, )
+	bot.sendMessage(msg.chatId, 'http://' + link + 'upload')
+})
+
+bot.onText(/\/files/, function(msg, match) {
+	bot.sendMessage(msg.chatId, 'http://' + link + 'files')
 })
 
 
