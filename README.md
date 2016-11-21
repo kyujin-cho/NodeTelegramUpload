@@ -22,6 +22,7 @@ This project is integrated with Telegram bot built for Node.js framework.
 	2. Replace `token` variable with your bot's token
 	3. Replace `link` variable with your server's absolute link
 6. run `npm start`
+
 ## Vulnerable Parts
 - Passwords are not encrypted => Extermely vulnerable! 
 	It is not suggested to use password feature.
