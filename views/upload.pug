@@ -1,0 +1,35 @@
+html
+	head
+		title='File Upload'
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css")
+		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+		style
+			| .row{
+			| 	margin-top: 15px;
+			| 	margin-bottom: 15px;
+			| }
+	body
+		div.container-fluid
+			form(action='/files', method='POST', encType='multipart/form-data')
+				div.row
+					div.col-lg-2
+						div.input-group
+							span#basic-addon1.input-group-addon File
+							input.form-control(type='file', name='file', aria-describedby='basic-addon1')
+				div.row
+					div.col-lg-2
+						div.input-group
+							span.input-group-addon#basic-addon2 @
+							input.form-control(type='text', name='uploader', placeholder='Uploader\'s ID(If necessary)', aria-describedby='basic-addon2')
+				div.row
+					div.col-lg-2
+						div.input-group
+							span.input-group-addon#basic-addon3 PW
+							input.form-control(type='text', name='password', placeholder='Password', aria-describedby='basic-addon3')
+				div.row
+					div.col-lg-2
+						div.input-group
+							input.form-control(type='text', name='name' placeholder='File Name')
+							span.input-group-btn
+								button.btn.btn-default Go!

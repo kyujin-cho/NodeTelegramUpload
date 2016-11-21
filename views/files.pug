@@ -1,0 +1,25 @@
+html
+	head
+		title="파일 브라우저"
+		script(src="https://code.jquery.com/jquery-3.1.1.min.js")
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css")
+		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+		script(type='text/javascript')
+			| function delete_file(filename) {
+			| 	var pw = window.prompt('Password', '')
+			| 	if(pw != null) {
+			| 		jQuery.ajax({
+			| 		  url: '/files/' + filename,
+			| 		  type: 'DELETE',
+			| 		  data: {password: pw},
+			| 		  success: function() { location.href = '/files'; }
+			| 		});
+			| 	}
+			| }
+	body
+		div.panel.panel-default
+			//- Default panel contents
+			div.panel-heading Files
+
+			table.table!= contents
