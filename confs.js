@@ -8,3 +8,4 @@ module.exports = folder_location
 module.exports = token
 module.exports = link
 module.exports = chatIds
+module.exports = db_name
