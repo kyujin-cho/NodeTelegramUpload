@@ -24,7 +24,7 @@ bot.onText(/\/files/, function(msg, match) {
 	})
 })
 
-bot.onText(/\/search (.+)/, function(msg, match) {
+bot.onText(/\/search_file (.+)/, function(msg, match) {
 	var kwd = match[1];
 	var str = ''
 	files.find({name : kwd}, function(err, file) {
