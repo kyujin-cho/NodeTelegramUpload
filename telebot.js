@@ -27,7 +27,7 @@ bot.onText(/\/files/, function(msg, match) {
 bot.onText(/\/search_file (.+)/, function(msg, match) {
 	var kwd = match[1];
 	var str = ''
-	files.find({name : kwd}, function(err, file) {
+	files.find({name : {"$regex" : kwd, "$options" : "i"}}, function(err, file) {
 		file.forEach(f => {
 			f = f.toObject();
 			str += f.name + ' : http://' + link + '/files/' + f.name + '\n';
