@@ -24,10 +24,6 @@ bot.onText(/\/files/, function(msg, match) {
 	})
 })
 
-bot.onText(/\/search_file/, function(msg, match) {
-	bot.sendMessage(msg.chat.id, '검색 키워드와 함께 입력해주세요.',  {reply_to_message_id: msg.message_id});
-})
-
 bot.onText(/\/search_file (.+)/, function(msg, match) {
 	var kwd = match[1];
 	var str = ''
@@ -43,9 +39,15 @@ bot.onText(/\/search_file (.+)/, function(msg, match) {
 			}
 		})
 	}).then(function(doc) {
-		bot.sendMessage(msg.chat.id, '검색 결과: \n' + str, {reply_to_message_id: msg.message_id});
+		bot.sendMessage(msg.chat.id, '검색 결과 \n' + str, {reply_to_message_id: msg.message_id});
 	})
 })
+
+bot.onText(/\/search_file/, function(msg, match) {
+	bot.sendMessage(msg.chat.id, '검색 키워드와 함께 입력해주세요.',  {reply_to_message_id: msg.message_id});
+})
+
+
 var sendMessage = function(uploader, link) {
 	chatIds.forEach(function(element, index, array) {
 		if(uploader == '' || uploader == null) { 
