@@ -1,11 +1,11 @@
-var folder_location = '/your/project/location'
+var folder_location = '/your/upload/folder'
 var token = 'YOUR_BOT_TOKEN'
 var link = 'your.server.link'
 var chatIds = []
-var db_name = 'your_db_name'
+var db_name ='your_db_name'
 
-module.exports = folder_location
-module.exports = token
-module.exports = link
-module.exports = chatIds
-module.exports = db_name
+module.exports.folder_location = folder_location
+module.exports.token = token
+module.exports.link = link
+module.exports.chatIds = chatIds
+module.exports.db_name = db_name
