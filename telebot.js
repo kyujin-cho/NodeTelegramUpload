@@ -1,8 +1,8 @@
 var TelegramBot = require('node-telegram-bot-api')
+var confs = require('./confs.js')
 
-var token = 'YOUR_BOT_TOKEN'
-var link = 'YOUR_LINK'
-var bot = new TelegramBot(token, {polling: true})
+var link = confs.link
+var bot = new TelegramBot(confs.token, {polling: true})
 
 var chatIds = []
 bot.onText(/\/upload/, function(msg, match) {

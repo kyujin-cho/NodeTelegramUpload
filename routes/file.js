@@ -2,10 +2,10 @@ var express = require('express')
 var router = express.Router()
 var fileUpload = require('express-fileupload')
 var fs = require('fs')
-
+var confs = require('../confs.js')
 var files = require('../DB/File.js')
 
-var folder_location = 'YOUR_FOLDER'
+var folder_location = confs.folder_location
 var bot = require('../telebot.js')
 
 router.post('/', function(req, res, next) {
@@ -40,7 +40,7 @@ router.post('/', function(req, res, next) {
 						if(err) 
 							handleError(err);
 						else {
-							bot(req.body.uploader, 'localhost:3000/files/' + req.body.name);
+							bot(req.body.uploader, confs.link + '/files/' + req.body.name);
 							res.redirect('files/');
 						}
 					})

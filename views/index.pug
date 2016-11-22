@@ -1,5 +1,20 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+html
+	head
+		title= "Telegram File Uploader"
+		script(src="https://code.jquery.com/jquery-3.1.1.min.js")
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css")
+		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+		script(type="text/javascript")
+			| $('#files').click(function() {
+			|  	location.href = '/files';
+			| })
+			| $('#upload').click(function() {
+			| 	location.href = '/upload';
+			| })
+	body
+		div.container
+			div.row
+				div.btn-group.btn-group-lg(role="group", aria-label="...")
+					button#files.btn.btn-default(type="button") View Files
+					button#upload.btn.btn-default(type="button") Upload File

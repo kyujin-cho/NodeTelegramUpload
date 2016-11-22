@@ -1,6 +1,6 @@
 html
 	head
-		title="파일 브라우저"
+		title="File Browser"
 		script(src="https://code.jquery.com/jquery-3.1.1.min.js")
 		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
 		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css")
@@ -18,8 +18,9 @@ html
 			| 	}
 			| }
 	body
-		div.panel.panel-default
-			//- Default panel contents
-			div.panel-heading Files
+		div.container
+			div.panel.panel-default
+				//- Default panel contents
+				div.panel-heading Files
 
-			table.table!= contents
+				table.table!= contents
