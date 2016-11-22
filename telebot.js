@@ -44,7 +44,7 @@ bot.onText(/\/search_file (.+)/, function(msg, match) {
 })
 
 bot.onText(/\/search_file/, function(msg, match) {
-	if(match[1] == '')
+	if(match['index'] == 0)
 		bot.sendMessage(msg.chat.id, '검색 키워드와 함께 입력해주세요.',  {reply_to_message_id: msg.message_id});
 })
 
@@ -52,9 +52,9 @@ bot.onText(/\/search_file/, function(msg, match) {
 var sendMessage = function(uploader, link) {
 	chatIds.forEach(function(element, index, array) {
 		if(uploader == '' || uploader == null) { 
-			bot.sendMessage(element, '저장소에 파일이 업로드되었습니다.\n링크: http://' + link, {reply_to_message_id: msg.message_id});
+			bot.sendMessage(element, '저장소에 파일이 업로드되었습니다.\n링크: http://' + link);
 		} else {
-			bot.sendMessage(element, '@' + uploader + ' 님이 파일을 업로드 하였습니다.\n링크: http://' + link, {reply_to_message_id: msg.message_id});		
+			bot.sendMessage(element, '@' + uploader + ' 님이 파일을 업로드 하였습니다.\n링크: http://' + link);		
 		}
 	})
 }
