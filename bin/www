@@ -14,7 +14,7 @@ var confs = require('../confs.js');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || confs.port);
+var port = normalizePort(process.env.PORT || confs.port_no);
 app.set('port', port);
 
 /**
