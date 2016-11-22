@@ -13,7 +13,8 @@ var index = require('./routes/index');
 var file = require('./routes/file');
 var upload = require('./routes/upload');
 
-var db_name = 'test'
+var confs = require('./confs.js');
+var db_name = confs.db_name
 var app = express();
 
 
