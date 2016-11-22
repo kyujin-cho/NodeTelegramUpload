@@ -28,7 +28,7 @@ bot.onText(/\/search_file (.+)/, function(msg, match) {
 	var kwd = match[1];
 	var str = ''
 	if(kwd == '') {
-		bot.sendMessage(msg.chat.id, '검색 키워드와 함께 입력해주세요.', , {reply_to_message_id: msg.message_id});
+		bot.sendMessage(msg.chat.id, '검색 키워드와 함께 입력해주세요.',  {reply_to_message_id: msg.message_id});
 	}
 	files.find({name : {"$regex" : kwd, "$options" : "i"}}, function(err, file) {
 		file.forEach(f => {
