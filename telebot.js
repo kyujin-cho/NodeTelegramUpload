@@ -4,7 +4,7 @@ var confs = require('./confs.js')
 var link = confs.link
 var bot = new TelegramBot(confs.token, {polling: true})
 
-var chatIds = []
+var chatIds = confs.chatIds
 bot.onText(/\/upload/, function(msg, match) {
 	bot.sendMessage(msg.chatId, 'http://' + link + 'upload')
 })
