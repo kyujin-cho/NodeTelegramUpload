@@ -14,7 +14,7 @@ bot.onText(/\/upload/, function(msg, match) {
 bot.onText(/\/files/, function(msg, match) {
 	var str = ''
 	files.find({}, function(err, file) {
-		file.forEach(f => function() {
+		file.forEach(f => {
 			f = f.toObject();
 			str += f.name + ' : http://' + link + '/files/' + f.name + '\n';
 			str += 'Uploader : ' + f.uploader + '\n\n';
@@ -28,7 +28,7 @@ bot.onText(/\/search (.+)/, function(msg, match) {
 	var kwd = match[1];
 	var str = ''
 	files.find({name : kwd}, function(err, file) {
-		file.forEach(f => function() {
+		file.forEach(f => {
 			f = f.toObject();
 			str += f.name + ' : http://' + link + '/files/' + f.name + '\n';
 			str += 'Uploader : ' + f.uploader + '\n\n';
