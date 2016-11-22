@@ -18,13 +18,13 @@ bot.onText(/\/files/, function(msg, match) {
 			f = f.toObject();
 			str += f.name + ' : http://' + link + '/files/' + f.name + '\n';
 			str += 'Uploader : ' + f.uploader + '\n\n';
-		}).then(function(doc) {
-			if(str == '') {
-				bot.sendMessage(msg.chat.id, '파일이 없습니다. ');
-			} else {
-				bot.sendMessage(msg.chat.id, '파일 목록: \n' + str);
-			}
 		})
+	}).then(function(doc) {
+		if(str == '') {
+			bot.sendMessage(msg.chat.id, '파일이 없습니다. ');
+		} else {
+			bot.sendMessage(msg.chat.id, '파일 목록: \n' + str);
+		}
 	})
 })
 
@@ -36,13 +36,13 @@ bot.onText(/\/search (.+)/, function(msg, match) {
 			f = f.toObject();
 			str += f.name + ' : http://' + link + '/files/' + f.name + '\n';
 			str += 'Uploader : ' + f.uploader + '\n\n';
-		}).then(function(doc) {
-			if(str == '') {
-				bot.sendMessage(msg.chat.id, '검색 결과가 없습니다. ');
-			} else {
-				bot.sendMessage(msg.chat.id, '검색 결과: \n' + str);
-			}
 		})
+	}).then(function(doc) {
+		if(str == '') {
+			bot.sendMessage(msg.chat.id, '검색 결과가 없습니다. ');
+		} else {
+			bot.sendMessage(msg.chat.id, '검색 결과: \n' + str);
+		}
 	})
 })
 var sendMessage = function(uploader, link) {
