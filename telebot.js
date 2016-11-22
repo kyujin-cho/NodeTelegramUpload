@@ -15,11 +15,11 @@ bot.onText(/\/files/, function(msg, match) {
 
 
 var sendMessage = function(uploader, link) {
-	chatIds.forEach(chatId => function() {
+	chatIds.forEach(function(element, index, array) {
 		if(uploader == '' || uploader == null) { 
-			bot.sendMessage(chatId, '저장소에 파일이 업로드되었습니다.\n링크: http://' + link);
+			bot.sendMessage(element, '저장소에 파일이 업로드되었습니다.\n링크: http://' + link);
 		} else {
-			bot.sendMessage(chatId, '@' + uploader + ' 님이 파일을 전송하셨습니다.\n링크: ' + link);		
+			bot.sendMessage(element, '@' + uploader + ' 님이 파일을 전송하셨습니다.\n링크: ' + link);		
 		}
 	})
 }
