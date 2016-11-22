@@ -1,5 +1,5 @@
 var TelegramBot = require('node-telegram-bot-api')
-var files = require('../DB/File.js')
+var files = require('./DB/File.js')
 
 var confs = require('./confs.js')
 
